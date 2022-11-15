@@ -1,17 +1,25 @@
 <html>
   <head>
     <title>Page Title</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
   <body>
     <div id="container">
       <div id="box"></div>
     </div>
     <style>
+      body{
+        background-color:black;
+        padding-top:20%;
+      }
       #container {
         width: 200px;
         height: 200px;
         background: yellow;
         position: relative;
+        margin-left:auto;
+        margin-right:auto;
       }
       #box {
         width: 50px;
@@ -22,31 +30,28 @@
     </style>
 
     <!--javaScript code-->
-    <!--code for a loop animation-->
 
     <script>
       let box = document.getElementById("box");
       let leftPos = 0; //left position (left property in css, under #box, to move black box towards right)
       let topPos = 0; //top position (top property in css, under #box, to move black box downwards)
-      let t = setInterval(move, 10);
+      let t = setInterval(move, 1);
 
-      function move() {
-
-        if (leftPos < 150 && topPos==0) { //checks conditions and moves the black box towards right
-          leftPos += 1;
-          box.style.left = leftPos + "px";
-        }else if(topPos<150 &&leftPos==150){ //checks conditions and moves the black box downwards
-          topPos+=1;
-          box.style.top=topPos+"px";
-        }else if(leftPos<=150 &&leftPos!=0){ //moves the blackbox from bottom right to bottom left
-          leftPos-=1;
-          box.style.left=leftPos+"px";
-        }else if(topPos<=150 && topPos!=0){ //moves the blackbox from bottom left to top left(to start the loop)
-          topPos-=1;
-          box.style.top=topPos+"px";
-        }
+     function move() {
+      if(leftPos<150&&topPos==0){
+        leftPos+=1;
+        box.style.left=leftPos+"px";
+      }else if(leftPos==150&&topPos!=150){
+        topPos+=1;
+        box.style.top=topPos+"px";
+      }else if(topPos==150&&leftPos!=0){
+        leftPos-=1;
+        box.style.left=leftPos+"px";
+      }else if(leftPos==0){
+        topPos-=1;
+        box.style.top=topPos+"px";
       }
-
+    }
     </script>
   </body>
 </html>
