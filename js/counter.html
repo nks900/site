@@ -1,15 +1,110 @@
 <html>
-    <head>
-        <link rel="stylesheet" href="count.css">
-    </head>
-    <body>
-        <h1>Counter App</h1>
-        <h1 id="count" class="countCls">0</h1>
-        <input type="button" id="increment" value="increment" onclick="increment()">
-        <input type="button" id="decrement" value="decrement" onclick="decrement()">
-        <input type="button" id="reset" value="reset" onclick="reset()">
+  <head>
+    <link rel="stylesheet" href="count.css" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <div class="contents">
+    <div class="text">
+      <h1>Counter App</h1>
+    <h1 id="count" class="countCls">0</h1>
+      </div>
+    <div class="incdec">
+      <input
+      type="button"
+      id="increment"
+      value="+"
+      onclick="increment()"
+      class="button"
+    />
+    <input
+      type="button"
+      id="decrement"
+      value="-"
+      onclick="decrement()"
+      class="button"
+    />
+      </div>
+      <br>
+      <div class="resetBox">
+      <input class="button" type="button" id="reset" value="reset" onclick="reset()" />
+    </div>
+    </div>
 
+    <style>
+      .contents{
+        width:300px;
+        height:400px;
+        border-radius:30px;
+        background:rgb(243, 255, 66);
+        margin:auto;
+      }
+      body {
+        font-family:sans-serif;
+        background-color:rgb(60, 84, 84);
+      }
+      #increment,#decrement{
+        font-size:22px;
+      }
+      #reset{
+        font-size:19px;
+        background-color:rgb(65, 239, 242);
+      }
+      .resetBox{
+        padding-top:20%;
+        padding-left:37%;
+      }
+      .incdec{
+        padding-top:10%;
+        padding-left:22%
+      }
+      .text{
+        padding-left:17%;
+        padding-top:10px;
+      }
+      #count{
+        padding-top:10%;
+        padding-left:35%;
+      }
+      .button{
+        height:30px;
+        width:80px;
+        border-radius:30px;
+        border:none;
+        font-family:sans-serif;
+      }
+      #increment{
+        background-color:rgb(58, 242, 110);
+      }
+      #decrement{
+        background-color:rgb(242, 58, 58);
+      }
+    </style>
+    <script>
+      var count = 0;
 
-        <script src=count.js></script>
-    </body>
+      var countValue = document.getElementById("count").innerHTML;
+
+      function increment() {
+        count = count + 1;
+        document.getElementById("count").innerHTML = count;
+      }
+
+      function reset() {
+        count = count - count;
+        document.getElementById("count").innerHTML = count;
+      }
+
+      //document.getElementById("count").innerHTML=count;
+
+      function decrement() {
+        if (count > 0) {
+          count = count - 1;
+          document.getElementById("count").innerHTML = count;
+        }
+      }
+    </script>
+  </body>
 </html>
+
