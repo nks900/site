@@ -98,6 +98,7 @@
         transform:translateY(540px);
         width:250px;
         height:250px;
+        /*background:black;*/
       }
       /*right wing*/
 
@@ -117,14 +118,53 @@
         height:200px;
         opacity:1;
         transform:translateY(320px);
+        background:black;
+        color: white;
       }
-      .about h3,.skills h3{
+      .skills h3{
         text-align: center;
         font-weight:bold;
       }
+      .about h3{
+        position:relative;
+        top:-15px;
+      }
       .about p, .skills p{
         font-weight: bold;
-        padding-left:10px;
+        padding-left:5px;
+      }
+      .about p{
+        position: relative;
+        top:-15;
+      }
+
+      /*buttons and MenuBar*/
+      .menubar{
+        width:250px;
+        height:17px;
+        background-color: rgb(49, 47, 51);
+        border-top-right-radius:10px;
+        border-top-left-radius:10px;
+      }
+      .buttons{
+        padding-left: 4px;
+        position: relative;
+      }
+      .btn{
+        background-color: white;
+        width:10px;
+        height:10px;
+        border-radius:50%;
+        display:inline-block;
+      }
+      .b1{
+        background-color: rgb(201, 41, 41);
+      }
+      .b2{
+        background-color: rgb(199, 154, 8);
+      }
+      .b3{
+        background-color: rgb(1, 138, 1);
       }
       
       /*skill bar css*/
@@ -221,7 +261,15 @@
 
       </div>
       <div class="about">
-        <h3>about me</h3>
+        <div class="menubar">
+        <div class="buttons">
+          <div class="btn b1"></div>
+          <div class="btn b2"></div>
+          <div class="btn b3"></div>
+        </div>
+        </div>
+        <!--</div>-->
+      <h3>:<span style="color:rgb(12, 94, 245)">~</span>$whoami</h3>
         <p>i'm a passionate kannapi</p>
       </div>
       
