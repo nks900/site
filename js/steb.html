@@ -1,7 +1,8 @@
 <html>
   <head>
-    <title>Stebin John Portfolio</title>
-    <!-CSS->
+    <title>Page Title</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
     <style>
             @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
@@ -96,7 +97,7 @@
         transform:translate(-10.1rem, 0);
         transform:translateY(540px);
         width:250px;
-        height:200px;
+        height:250px;
       }
       /*right wing*/
 
@@ -120,16 +121,86 @@
       .about h3,.skills h3{
         text-align: center;
         font-weight:bold;
-        color:#0c52a1
       }
       .about p, .skills p{
         font-weight: bold;
         padding-left:10px;
       }
+      
+      /*skill bar css*/
+      
+      .container{
+  width: 50%;
+  margin: 0 auto;
+}
+@keyframes load{
+  from {
+    width: 0%
+  }
+}
+@-webkit-keyframes load{
+  from {
+    width: 0%
+  }
+}
+@-moz-keyframes load{
+  from {
+    width: 0%
+  }
+}
+@-o-keyframes load{
+  from {
+    width: 0%
+  }
+}
+
+.bar{
+  background-color: #EEE;
+  padding: 2px;
+  border-radius: 15px;
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #FFF;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+}
+.bar::before{
+  content:  attr(data-skill);
+  background-color: black;
+  display: inline-block;
+  padding: 5px 0 5px 10px;
+  border-radius: inherit;
+  animation: load 2s 0s;
+  -webkit-animation: load 2s 0s;
+  -moz-animation: load 2s 0s;
+  -o-animation: load 2s 0s;
+}
+
+.bar.front::before{
+  background-color: black;
+}
+.bar.back::before{
+  background-color: black;
+}
+
+.bar.learning::before{
+  width: calc(50% - 10px);
+}
+.bar.basic::before{
+  width: calc(40% - 10px);
+}
+.bar.intermediate::before{
+  width: calc(70% - 10px);
+}
+.bar.advanced::before{
+  width: calc(65% - 10px);
+}
+.bar.expert::before{
+  width: calc(100% - 10px);
+}
+
 
     </style>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
   <body>
     
@@ -139,17 +210,20 @@
           src="https://pps.whatsapp.net/v/t61.24694-24/304127833_636586421412789_3368438698200474994_n.jpg?ccb=11-4&oh=01_AdRLG-RQYiFT4T_ojijbNBXsX1-FdIHxUGyI_PNERjNQtQ&oe=6382D94B"
         />
       </div>
-            
+            <div class="skills">
+      <h3>skills</h3>
+              <!--skills bar section-->
+        <div class="bar learning" data-skill="AWS"></div>
+    <div class="bar back basic" data-skill="Python"></div>
+    <div class="bar back intermediate" data-skill="CLI"></div>
+    <div class="bar front advanced" data-skill="BackEnd"></div>
+    <div class="bar front expert" data-skill="Linux"></div>
+
+      </div>
       <div class="about">
         <h3>about me</h3>
-        <p>i'm a kannapi</p>
+        <p>i'm a passionate kannapi</p>
       </div>
-      <div class="skills">
-        <h3>skills</h3>
-          <p>Js</p>
-          <p>Linux</p>
-          <p>Backend Dev</p>
-        </div>
       
       <div class="caption">
         <h3>Stebin John</h3>
