@@ -1,0 +1,293 @@
+<html>
+  <head>
+    <title>Nikhil Sha Portfolio</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <style>
+            @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+
+      body{
+        /*display: flex;*/
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background:rgb(101, 105, 102);
+        background-repeat:no-repeat;
+        background-size:auto;
+        font-family: 'Quicksand', sans-serif;
+        padding-top:60px;
+      }
+      .content{
+        width:200px;
+        height:200px;
+        background:#fff;
+        margin:auto;
+        border-radius:50%; /*to make white area round*/
+        box-shadow:0 10px 15px;
+        transition:0.6s;
+        padding:3px; /*size of the small white area behind the pic*/
+      }
+      .content:hover{
+        display:flex;
+        flex-direction: column;
+        width:250px;
+        height:300px;
+        border-radius:10px;
+        transition:0.6s;
+      }
+      .content:hover img{
+        transform: translateY(-30px);/*to move pic slightly up while hover*/
+        border-radius:10px;
+        margin-left:50px;
+        width:150px;
+        height:150px;
+        transition:0.6s;
+      }
+      .content img{
+        width:200px;
+        height:200px;
+        border-radius:50%;
+        z-index:10;/*dont't know what this will do*/
+        box-shadow: 0 0 22px #3336;
+        transition:0.6s;
+      }
+      .caption{
+         text-align:center;
+         transform:translateY(-50px);/*to bring caption slightly up*/
+        opacity:0;
+        transition:0.6s;
+      }
+      .content:hover .caption {
+        opacity:1;
+      }
+      .caption h3 {
+          font-size: 32px;
+          font-weight: 600;
+      }
+      .caption p{
+        color:#0c52a1;
+        transform:translateY(-25px);
+        font-size:large;
+        font-weight: bold;
+      }
+
+      .social {
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+        position: relative;
+        top: 5px;
+      }
+
+      /*left wing*/
+      .skills{
+        width:100px;
+        height:200px;
+        background:#fff;
+        box-shadow:0 10px 15px;
+        transition:0.6s;
+        border-radius:10px;
+        opacity:0;
+        position:absolute;
+        top:70px;
+      }
+      .content:hover .skills{
+        opacity:1;
+        transform:translate(-10.1rem, 0);
+        transform:translateY(540px);
+        width:250px;
+        height:250px;
+        /*background:black;*/
+      }
+      /*right wing*/
+
+      .about{
+        width:25px;
+        height:20px;
+        background:#fff;
+        box-shadow:0 10px 15px;
+        transition:0.6s;
+        border-radius:10px;
+        opacity:0;
+        position:absolute;
+        top:70px;
+      }
+      .content:hover .about{
+        width:250px;
+        height:200px;
+        opacity:1;
+        transform:translateY(320px);
+        background:black;
+        color: white;
+      }
+      .skills h3{
+        text-align: center;
+        font-weight:bold;
+      }
+      .about h3{
+        position:relative;
+        top:-15px;
+        font-size: large;
+      }
+      .about p, .skills p{
+        font-weight: bold;
+        padding-left:5px;
+      }
+      .about p{
+        position: relative;
+        top:-15;
+      }
+
+      /*buttons and MenuBar*/
+      .menubar{
+        width:250px;
+        height:17px;
+        background-color: rgb(49, 47, 51);
+        border-top-right-radius:10px;
+        border-top-left-radius:10px;
+      }
+      .buttons{
+        padding-left: 4px;
+        position: relative;
+      }
+      .btn{
+        background-color: white;
+        width:10px;
+        height:10px;
+        border-radius:50%;
+        display:inline-block;
+      }
+      .b1{
+        background-color: rgb(201, 41, 41);
+      }
+      .b2{
+        background-color: rgb(199, 154, 8);
+      }
+      .b3{
+        background-color: rgb(1, 138, 1);
+      }
+      
+      /*skill bar css*/
+      
+      .container{
+  width: 50%;
+  margin: 0 auto;
+}
+@keyframes load{
+  from {
+    width: 0%
+  }
+}
+@-webkit-keyframes load{
+  from {
+    width: 0%
+  }
+}
+@-moz-keyframes load{
+  from {
+    width: 0%
+  }
+}
+@-o-keyframes load{
+  from {
+    width: 0%
+  }
+}
+
+.bar{
+  background-color: #EEE;
+  padding: 2px;
+  border-radius: 15px;
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #FFF;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+}
+.bar::before{
+  content:  attr(data-skill);
+  background-color: black;
+  display: inline-block;
+  padding: 5px 0 5px 10px;
+  border-radius: inherit;
+  animation: load 2s 0s;
+  -webkit-animation: load 2s 0s;
+  -moz-animation: load 2s 0s;
+  -o-animation: load 2s 0s;
+}
+
+.bar.front::before{
+  background-color: black;
+}
+.bar.back::before{
+  background-color: black;
+}
+
+.bar.learning::before{
+  width: calc(80% - 10px);
+}
+.bar.basic::before{
+  width: calc(70% - 10px);
+}
+.bar.intermediate::before{
+  width: calc(40% - 10px);
+}
+.bar.advanced::before{
+  width: calc(65% - 10px);
+}
+.bar.expert::before{
+  width: calc(55% - 10px);
+}
+
+
+    </style>
+  </head>
+  <body>
+    
+    <div class="content">
+      <div class="img">
+        <img
+          src="https://i1.sndcdn.com/artworks-sylkYPAwTp95iXqn-ehwUOA-t500x500.jpg"
+
+          
+        />
+      </div>
+            <div class="skills">
+      <h3>skills</h3>
+              <!--skills bar section-->
+        <div class="bar learning" data-skill="CLI"></div>
+    <div class="bar back basic" data-skill="Linux"></div>
+    <div class="bar back intermediate" data-skill="Docker"></div>
+    <div class="bar front advanced" data-skill="HTML"></div>
+    <div class="bar front expert" data-skill="CSS"></div>
+
+      </div>
+      <div class="about">
+        <div class="menubar">
+        <div class="buttons">
+          <div class="btn b1"></div>
+          <div class="btn b2"></div>
+          <div class="btn b3"></div>
+        </div>
+        </div>
+        <!--</div>-->
+      <h3>:<span style="color:rgb(12, 94, 245)">~</span>$whoami</h3>
+        <p>server engineer, having experience in managing and configuring servers.</p>
+      </div>
+      
+      <div class="caption">
+        <h3>NiKhil Sha</h3>
+        <p>Server Engineer</p>
+        <div class="social">
+          <a href="https://github.com/nks900" target="_blank"><lottie-player src="https://assets6.lottiefiles.com/packages/lf20_6HFXXE.json" background="transparent"
+            speed="1" style="width: 30px; height: 30px;" loop autoplay></lottie-player></a>
+          <a href="https://www.linkedin.com/in/nikhil-sha-843a61217/" target="_blank"><lottie-player src="https://assets6.lottiefiles.com/private_files/lf30_tgzwnxcf.json" background="transparent"
+            speed="1" style="width: 30px; height: 30px;" loop autoplay></lottie-player> </a>
+      </div>
+    </div>
+    
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    
+  </body>
+</html>
