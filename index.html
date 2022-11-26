@@ -1,161 +1,293 @@
-<!DOCTYPE html>
 <html>
-<head>
-<title>NiKhil Sha portfolio</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="style.css">
-<link rel="icon" type="image/x-icon" href="images/zoro3.png">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
-.w3-row-padding img {margin-bottom: 12px}
-/* Set the width of the sidebar to 120px */
-.w3-sidebar {width: 120px;background: #222;}
-/* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
-#main {margin-left: 120px}
-/* Remove margins from "page content" on small screens */
-@media only screen and (max-width: 600px) {#main {margin-left: 0}}
-</style>
-</head>
-<body class="w3-black">
+  <head>
+    <title>Nikhil Sha Portfolio</title>
 
-
-<!-- Icon Bar (Sidebar - hidden on small screens) -->
-<nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
-  <!-- Avatar image in top left corner -->
-  <img src="images/code.jpg" style="width:100%">
-  <a href="#" class="w3-bar-item w3-button w3-padding-large w3-black">
-    <i class="fa fa-home w3-xxlarge"></i>
-    <p>HOME</p>
-  </a>
-  <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-    <i class="fa fa-user w3-xxlarge"></i>
-    <p>ABOUT</p>
-  </a>
-  <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-    <i class="fa fa-envelope w3-xxlarge"></i>
-    <p>CONTACT</p>
-  </a>
-</nav>
-
-<!-- Navbar on small screens (Hidden on medium and large screens) -->
-<div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
-  <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
-    <a href="#" class="w3-bar-item w3-button" style="width:25% !important">HOME</a>
-    <a href="#about" class="w3-bar-item w3-button" style="width:25% !important">ABOUT</a>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <a href="#contact" class="w3-bar-item w3-button" style="width:25% !important">CONTACT</a>
-  </div>
-</div>
+    <style>
+            @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
 
-<!-- Page Content -->
-<div class="w3-padding-large" id="main">
-  <!-- Header/Home -->
-  <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
-    <div class="w3-jumbo">
-  <!--<span class="w3-hide-small"></span>-->
-   
-    <h1>hey, i'm</h1> 
-    <p>NiKhilSha</p> 
-     
-    </div>
-    <p></p>
-    <img src="images/code2.jpeg" alt="display pic" class="w3-image" width="500" height="1100">
-    <!--  width="992" height="1108"   default image size  -->
-  </header>
+      body{
+        /*display: flex;*/
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background:rgb(101, 105, 102);
+        background-repeat:no-repeat;
+        background-size:auto;
+        font-family: 'Quicksand', sans-serif;
+        padding-top:60px;
+      }
+      .content{
+        width:200px;
+        height:200px;
+        background:#fff;
+        margin:auto;
+        border-radius:50%; /*to make white area round*/
+        box-shadow:0 10px 15px;
+        transition:0.6s;
+        padding:3px; /*size of the small white area behind the pic*/
+      }
+      .content:hover{
+        display:flex;
+        flex-direction: column;
+        width:250px;
+        height:300px;
+        border-radius:10px;
+        transition:0.6s;
+      }
+      .content:hover img{
+        transform: translateY(-30px);/*to move pic slightly up while hover*/
+        border-radius:10px;
+        margin-left:50px;
+        width:150px;
+        height:150px;
+        transition:0.6s;
+      }
+      .content img{
+        width:200px;
+        height:200px;
+        border-radius:50%;
+        z-index:10;/*dont't know what this will do*/
+        box-shadow: 0 0 22px #3336;
+        transition:0.6s;
+      }
+      .caption{
+         text-align:center;
+         transform:translateY(-50px);/*to bring caption slightly up*/
+        opacity:0;
+        transition:0.6s;
+      }
+      .content:hover .caption {
+        opacity:1;
+      }
+      .caption h3 {
+          font-size: 32px;
+          font-weight: 600;
+      }
+      .caption p{
+        color:#0c52a1;
+        transform:translateY(-25px);
+        font-size:large;
+        font-weight: bold;
+      }
 
-  <!-- About Section -->
-  <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about"> 
-    <h4 div class="snippet" ><code>:<span style="color:#1173cf">~</span>$whoami</code></h4>
-    <hr style="width:200px" class="w3-opacity">
-    <p> Linux Server Engineer, having experience in managing and configuring servers.
-    </p>
-    <!-- <h4 class="snippet"><code>:<span style="color:#1173cf">~</span>$cat Skills</code></h4> -->
-    <h2 class="w3-text-light-grey">Skills</h2>
-    <hr style="width:200px" class="w3-opacity">
-    <p class="w3-wide">CLI</p>
-    <div class="w3-white">
-      <div class="w3-dark-grey" style="height:28px;width:85%"></div>
-    </div> 
-    <p class="w3-wide">Linux</p>
-    <div class="w3-white">
-      <div class="w3-dark-grey" style="height:28px;width:80%"></div>
-    </div>
+      .social {
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+        position: relative;
+        top: 5px;
+      }
+
+      /*left wing*/
+      .skills{
+        width:100px;
+        height:200px;
+        background:#fff;
+        box-shadow:0 10px 15px;
+        transition:0.6s;
+        border-radius:10px;
+        opacity:0;
+        position:absolute;
+        top:70px;
+      }
+      .content:hover .skills{
+        opacity:1;
+        transform:translate(-10.1rem, 0);
+        transform:translateY(540px);
+        width:250px;
+        height:250px;
+        /*background:black;*/
+      }
+      /*right wing*/
+
+      .about{
+        width:25px;
+        height:20px;
+        background:#fff;
+        box-shadow:0 10px 15px;
+        transition:0.6s;
+        border-radius:10px;
+        opacity:0;
+        position:absolute;
+        top:70px;
+      }
+      .content:hover .about{
+        width:250px;
+        height:200px;
+        opacity:1;
+        transform:translateY(320px);
+        background:black;
+        color: white;
+      }
+      .skills h3{
+        text-align: center;
+        font-weight:bold;
+      }
+      .about h3{
+        position:relative;
+        top:-15px;
+        font-size: large;
+      }
+      .about p, .skills p{
+        font-weight: bold;
+        padding-left:5px;
+      }
+      .about p{
+        position: relative;
+        top:-15;
+      }
+
+      /*buttons and MenuBar*/
+      .menubar{
+        width:250px;
+        height:17px;
+        background-color: rgb(49, 47, 51);
+        border-top-right-radius:10px;
+        border-top-left-radius:10px;
+      }
+      .buttons{
+        padding-left: 4px;
+        position: relative;
+      }
+      .btn{
+        background-color: white;
+        width:10px;
+        height:10px;
+        border-radius:50%;
+        display:inline-block;
+      }
+      .b1{
+        background-color: rgb(201, 41, 41);
+      }
+      .b2{
+        background-color: rgb(199, 154, 8);
+      }
+      .b3{
+        background-color: rgb(1, 138, 1);
+      }
+      
+      /*skill bar css*/
+      
+      .container{
+  width: 50%;
+  margin: 0 auto;
+}
+@keyframes load{
+  from {
+    width: 0%
+  }
+}
+@-webkit-keyframes load{
+  from {
+    width: 0%
+  }
+}
+@-moz-keyframes load{
+  from {
+    width: 0%
+  }
+}
+@-o-keyframes load{
+  from {
+    width: 0%
+  }
+}
+
+.bar{
+  background-color: #EEE;
+  padding: 2px;
+  border-radius: 15px;
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #FFF;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+}
+.bar::before{
+  content:  attr(data-skill);
+  background-color: black;
+  display: inline-block;
+  padding: 5px 0 5px 10px;
+  border-radius: inherit;
+  animation: load 2s 0s;
+  -webkit-animation: load 2s 0s;
+  -moz-animation: load 2s 0s;
+  -o-animation: load 2s 0s;
+}
+
+.bar.front::before{
+  background-color: black;
+}
+.bar.back::before{
+  background-color: black;
+}
+
+.bar.learning::before{
+  width: calc(80% - 10px);
+}
+.bar.basic::before{
+  width: calc(70% - 10px);
+}
+.bar.intermediate::before{
+  width: calc(56% - 10px);
+}
+.bar.advanced::before{
+  width: calc(65% - 10px);
+}
+.bar.expert::before{
+  width: calc(55% - 10px);
+}
+
+
+    </style>
+  </head>
+  <body>
     
-    <p class="w3-wide">Docker</p>
-    <div class="w3-white">
-      <div class="w3-dark-grey" style="height:28px;width:60%"></div>
-    </div>
-    <p class="w3-wide">HTML</p>
-    <div class="w3-white">
-      <div class="w3-dark-grey" style="height:28px;width:55%"></div>
-    </div>
-    <p class="w3-wide">CSS</p>
-    <div class="w3-white">
-      <div class="w3-dark-grey" style="height:28px;width:50%"></div>
-    </div>
-    <p class="w3-wide">Rengoku Onigiri</p>
-    <div class="w3-white">
-      <div class="w3-dark-grey" style="height:28px;width:98%"></div>
-    </div>
-    
-    <br>
-    
-    <!-- <div class="w3-row w3-center w3-padding-16 w3-section w3-light-grey">
-      <div class="w3-quarter w3-section">
-        <span class="w3-xlarge">11+</span><br>
-        Partners
+    <div class="content">
+      <div class="img">
+        <img
+          src="https://i1.sndcdn.com/artworks-sylkYPAwTp95iXqn-ehwUOA-t500x500.jpg"
+
+          
+        />
       </div>
-      <div class="w3-quarter w3-section">
-        <span class="w3-xlarge">55+</span><br>
-        Projects Done
+            <div class="skills">
+      <h3>skills</h3>
+              <!--skills bar section-->
+        <div class="bar learning" data-skill="CLI"></div>
+    <div class="bar back basic" data-skill="Linux"></div>
+    <div class="bar back intermediate" data-skill="Docker"></div>
+    <div class="bar front advanced" data-skill="HTML"></div>
+    <div class="bar front expert" data-skill="CSS"></div>
+
       </div>
-      <div class="w3-quarter w3-section">
-        <span class="w3-xlarge">89+</span><br>
-        Happy Clients
+      <div class="about">
+        <div class="menubar">
+        <div class="buttons">
+          <div class="btn b1"></div>
+          <div class="btn b2"></div>
+          <div class="btn b3"></div>
+        </div>
+        </div>
+        <!--</div>-->
+      <h3>:<span style="color:rgb(12, 94, 245)">~</span>$whoami</h3>
+        <p>server engineer, having experience in managing and configuring servers.</p>
       </div>
-      <div class="w3-quarter w3-section">
-        <span class="w3-xlarge">150+</span><br>
-        Meetings
+      
+      <div class="caption">
+        <h3>NiKhil Sha</h3>
+        <p>Server Engineer</p>
+        <div class="social">
+          <a href="https://github.com/nks900" target="_blank"><lottie-player src="https://assets6.lottiefiles.com/packages/lf20_6HFXXE.json" background="transparent"
+            speed="1" style="width: 30px; height: 30px;" loop autoplay></lottie-player></a>
+          <a href="https://www.linkedin.com/in/nikhil-sha-843a61217/" target="_blank"><lottie-player src="https://assets6.lottiefiles.com/private_files/lf30_tgzwnxcf.json" background="transparent"
+            speed="1" style="width: 30px; height: 30px;" loop autoplay></lottie-player> </a>
       </div>
     </div>
-
-    <button class="w3-button w3-light-grey w3-padding-large w3-section">
-      <i class="fa fa-download"></i> Download Resume
-    </button> -->
     
-   <!-- Contact Section -->
-  <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
-    <h2 class="w3-text-light-grey">Contact Me</h2>
-<!-- <h4 class="snippet"><code>:<span style="color:#1173cf">~</span>$locate -i NiKhilSha</code></h4> -->
-    <hr style="width:200px" class="w3-opacity">
-
-    <div class="w3-section">
-     <p><a href="https://www.linkedin.com/in/nikhil-sha-843a61217/" target="_blank" style="text-decoration: none;">
-        <i class="fa fa-linkedin fa-fw w3-text-white w3-xxlarge w3-margin-right"></i>
-      </a></p>
-
-      <p><a href="https://github.com/nks900" target="_blank" style="text-decoration: none;">
-        <i class="fa fa-github fa-fw w3-text-white w3-xxlarge w3-margin-right"></i>
-      </a></p>
-  
-    </div><br>
-
-  </div>
-
-  
-    <!-- Footer -->
-  <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
- <!--   <i class="fa fa-linkedin w3-hover-opacity"></i> &nbsp;
-    <i class="fa fa-envelope w3-hover-opacity"></i> -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     
-  </footer>  
-
-<!-- END PAGE CONTENT -->
-</div>
-<script>console.log(";)")</script>
-
-</body>
+  </body>
 </html>
