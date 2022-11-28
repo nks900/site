@@ -242,12 +242,12 @@
 }
 /*Cursor Blink*/
 #cursor{
-  animation:blink 0.7s linear infinite;
+  animation:blink 0.7s linear infinite;/*to make cursor(|)) blink*/
   font-size:20px;
-  display: inline-block;
-  transform:scale(10,1);
+  display: inline-block; /*related to cursor style*/
+  transform:scale(8,1); /*to increase cursor(|) width*/
 }
-@keyframes blink{
+@keyframes blink{ /*cursor blink animation*/
   0%{
     opacity:0;
   }
