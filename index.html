@@ -9,6 +9,7 @@
             @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
 
       body{
+        overflow: hidden;
         /*display: flex;*/
         justify-content: center;
         align-items: center;
@@ -28,6 +29,9 @@
         box-shadow:0 10px 15px;
         transition:0.6s;
         padding:3px; /*size of the small white area behind the pic*/
+      }
+      .content:hover body{
+        overflow:scroll;
       }
       .content:hover{
         display:flex;
@@ -81,7 +85,7 @@
         top: 5px;
       }
 
-      /*left wing*/
+      /*skills  /left wing*/
       .skills{
         width:100px;
         height:200px;
@@ -101,7 +105,7 @@
         height:250px;
         /*background:black;*/
       }
-      /*right wing*/
+      /* about   /right wing*/
 
       .about{
         width:25px;
@@ -241,7 +245,9 @@
 .bar.expert::before{
   width: calc(55% - 10px);
 }
+
 /*Cursor Blink*/
+
 #cursor{
   animation:blink 0.7s linear infinite;/*to make cursor(|)) blink*/
   font-size:20px;
@@ -257,12 +263,18 @@
   }
 }
 
+/*scroll bar style*/
+
+::-webkit-scrollbar{ /*decreased width to hide the scroll bar*/
+  width:0.1px;
+}
 
     </style>
+    
   </head>
   <body>
-    
-    <div class="content">
+
+    <div class="content" onmouseover="scrollOn()" onmouseout="scrollOff()">
       <div class="img">
         <img
           src="https://i1.sndcdn.com/artworks-sylkYPAwTp95iXqn-ehwUOA-t500x500.jpg"
@@ -306,6 +318,18 @@
     </div>
     
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-    
+    <script>
+      //adding js to activate scroll while content:hover triggers
+      let body=document.getElementsByTagName("body")[0];
+      function scrollOn(){
+        body.style.overflow="auto";
+        body.style.paddingTop="60px";
+      }
+
+      function scrollOff(){
+        document.getElementsByTagName("body")[0];
+        body.style.overflow="hidden";
+      }
+    </script>
   </body>
 </html>
