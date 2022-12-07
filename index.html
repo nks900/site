@@ -132,6 +132,7 @@
         font-weight:bold;
       }
       .about h3{
+        font-family:monospace,monospace;
         position:relative;
         top:-15px;
         font-size: large;
@@ -141,6 +142,8 @@
         padding-left:5px;
       }
       .about p{
+        font-size:14px;
+        font-family:monospace;
         position: relative;
         top:-15;
       }
@@ -169,22 +172,39 @@
         background-color: rgb(206, 29, 29);
       }
       .b1:hover{
-        background-color: rgb(0, 0, 0);
+        background-color: rgb(255, 255, 255);
       }
 
       .b2{
         background-color: rgb(231, 181, 14);
       }
       .b2:hover{
-        background-color: rgb(0, 0, 0);
+        background-color: rgb(255, 255, 255);
       }
 
       .b3{
         background-color: rgb(5, 156, 5);
       }
       .b3:hover{
-        background-color: rgb(0, 0, 0);
+        background-color: rgb(255, 255, 255);
       }
+
+      /*Cursor Blink in Terminal*/
+
+#cursor{
+  animation:blink 0.7s linear infinite;/*to make cursor(|)) blink*/
+  font-size:20px;
+  display: inline-block; /*related to cursor style*/
+  transform:scale(6,1); /*to increase cursor(|) width*/
+}
+@keyframes blink{ /*cursor blink animation*/
+  0%{
+    opacity:0;
+  }
+  100%{
+    opacity:1;
+  }
+}
       
       /*skill bar css*/
       
@@ -258,22 +278,6 @@
   width: calc(55% - 10px);
 }
 
-/*Cursor Blink*/
-
-#cursor{
-  animation:blink 0.7s linear infinite;/*to make cursor(|)) blink*/
-  font-size:20px;
-  display: inline-block; /*related to cursor style*/
-  transform:scale(8,1); /*to increase cursor(|) width*/
-}
-@keyframes blink{ /*cursor blink animation*/
-  0%{
-    opacity:0;
-  }
-  100%{
-    opacity:1;
-  }
-}
 
 /*scroll bar style*/
 
@@ -315,7 +319,7 @@
         <!--</div>-->
       <h3>:<span style="color:rgb(12, 94, 245)">~</span>$whoami</h3>
         <p>i'm a server engineer, having experience in managing and configuring servers.</p>
-      <h3>:<span style="color:rgb(12, 94, 245)">~</span>$&nbsp<span id="cursor">|</span></h3>
+      <h3>:<span style="color:rgb(12, 94, 245)">~</span>$<!--&nbsp--><span id="cursor">|</span></h3>
       </div>
       
       <div class="caption">
