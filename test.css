@@ -1,3 +1,5 @@
+
+ 
 @import url('https://fonts.googleapis.com/css?family=Alex+Brush|Overpass+Mono:600,700');
  @import url('https://fonts.googleapis.com/css?family=PT+Sans');
  body {
@@ -22,9 +24,9 @@
 	 margin: 0;
 }
 /* HEADER */
- header {
+  header {
 	 min-height: 100vh;
-	 background: linear-gradient(to bottom, rgba(0, 0, 0, .8), transparent), url('http://zigis.com.au/wp-content/uploads/2014/05/holiday2013_front.jpg') no-repeat center center;
+	 background: linear-gradient(to bottom, rgba(0, 0, 0, .8), transparent), url('https://videos.pexels.com/video-files/12142378/12142378-uhd_2732_1440_24fps.mp4') no-repeat center center;
 	 background-size: cover;
 	 background-attachment: fixed;
 	 display: flex;
@@ -474,5 +476,49 @@
 		 transform: rotate(360deg);
 		 opacity: 1;
 	}
+
+
+
+
+
+
+
+
 }
  
+
+/*  new video attributes */
+header {
+	min-height: 100vh;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+}
+
+header video {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	z-index: -1;
+}
+
+header::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(to bottom, rgba(0, 0, 0, .8), transparent);
+	z-index: 0; /* Ensure gradient is behind video */
+}
+
+/* Center header text or other content */
+/* Your existing styles for text alignment */
+
+@media (max-width: 768px) {
+   /* Additional styles for smaller screens if needed */
+}
