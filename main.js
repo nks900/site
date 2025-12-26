@@ -11,7 +11,7 @@ new Vue({
       tracks: [
         {
           name: "",
-          artist: "",
+          artist: "Hell Loop",
           cover: "https://raw.githubusercontent.com/muhammederdem/mini-player/master/img/1.jpg",
           source: "https://github.com/nks900/x/raw/refs/heads/main/heyxf.mp3",
           url: "x",
@@ -144,4 +144,5 @@ new Vue({
       document.head.appendChild(link)
     }
   }
+
 });
