@@ -10,8 +10,8 @@ new Vue({
       isTimerPlaying: false,
       tracks: [
         {
-          name: "",
-          artist: "Hell Loop",
+          name: "Hell Loop",
+          artist: "",
           cover: "https://raw.githubusercontent.com/muhammederdem/mini-player/master/img/1.jpg",
           source: "https://github.com/nks900/x/raw/refs/heads/main/heyxf.mp3",
           url: "x",
@@ -146,3 +146,4 @@ new Vue({
   }
 
 });
+
