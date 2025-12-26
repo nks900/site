@@ -28,7 +28,7 @@ body {
   }
 }
 .player {
-  background: #800080;
+  background: #362036;
   width: 410px;
   min-height: 480px;
   box-shadow: 0px 15px 35px -5px rgba(50, 88, 130, 0.32);
@@ -364,3 +364,4 @@ body {
   pointer-events: none;
   opacity: 0;
 }
+
