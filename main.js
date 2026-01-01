@@ -14,7 +14,7 @@ new Vue({
           artist: "",
           cover: "heyxx.jpg",
           source: "https://github.com/nks900/x/raw/refs/heads/main/heyxf.mp3",
-          url: "",
+          url: "https://open.spotify.com/user/4jc6qs97qijgftvboqt363ksp?nd=1&dlsi=02fb21f967074823",
           favorited: false
         }
       ],
@@ -146,6 +146,7 @@ new Vue({
   }
 
 });
+
 
 
 
