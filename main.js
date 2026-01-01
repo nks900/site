@@ -11,7 +11,7 @@ new Vue({
       tracks: [
         {
           name: "Soon you'll be healed, forgiven and refreshed. Free from all trauma, pain, guilt and shame. You may even forget your own name.",
-          artist: "",
+          artist: "103.5 Dawn FM",
           cover: "heyxx.jpg",
           source: "https://github.com/nks900/x/raw/refs/heads/main/heyxf.mp3",
           url: "https://open.spotify.com/user/4jc6qs97qijgftvboqt363ksp?nd=1&dlsi=02fb21f967074823",
@@ -146,6 +146,7 @@ new Vue({
   }
 
 });
+
 
 
 
