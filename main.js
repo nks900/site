@@ -10,7 +10,7 @@ new Vue({
       isTimerPlaying: false,
       tracks: [
         {
-          name: "Soon you'll be healed, forgiven and refreshed. You may even forget your own name.",
+          name: "",
           artist: "103.5 Dawn FM",
           cover: "heyxx.jpg",
           source: "https://github.com/nks900/x/raw/refs/heads/main/heyxf.mp3",
@@ -146,6 +146,7 @@ new Vue({
   }
 
 });
+
 
 
 
