@@ -5,24 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nikhil Sha</title>
 
-<!-- FONTS -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
-
-<!-- ICONS -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 * { box-sizing: border-box; }
 
 :root {
-	--bg1: #0f0c29;
-	--bg2: #1a0f2e;
 	--accent: #ff4ecd;
 	--text: #e7e3f5;
 	--sub: #b9b4d0;
 }
 
-/* 🌌 BACKGROUND */
 body {
 	margin: 0;
 	font-family: 'Inter', sans-serif;
@@ -41,7 +35,6 @@ body {
 	100% { background-position: 0% 50%; }
 }
 
-/* GRID */
 .links {
 	display: grid;
 	grid-template-columns: repeat(12, 1fr);
@@ -50,7 +43,6 @@ body {
 	width: 100%;
 }
 
-/* CARD */
 .item {
 	position: relative;
 	padding: 18px;
@@ -64,7 +56,6 @@ body {
 	transition: 0.3s ease;
 }
 
-/*  ANIMATED BORDER */
 .item::before {
 	content: "";
 	position: absolute;
@@ -73,7 +64,6 @@ body {
 	background: linear-gradient(120deg, transparent, var(--accent), transparent);
 	background-size: 200% 200%;
 	animation: borderMove 4s linear infinite;
-	z-index: 0;
 	opacity: 0.6;
 }
 
@@ -83,110 +73,102 @@ body {
 	inset: 1px;
 	background: rgba(20, 10, 36, 0.9);
 	border-radius: 14px;
-	z-index: 1;
 }
 
-.item * {
-	position: relative;
-	z-index: 2;
-}
+.item * { position: relative; z-index: 2; }
 
 @keyframes borderMove {
 	0% { background-position: 0% 50%; }
 	100% { background-position: 200% 50%; }
 }
 
-/* hover */
-.item:hover {
-	transform: translateY(-6px) scale(1.02);
-}
+.item:hover { transform: translateY(-6px) scale(1.02); }
 
-/* sizes */
 .lg { grid-column: span 6; min-height: 220px; }
 .md { grid-column: span 4; min-height: 170px; }
 .sm { 
 	grid-column: span 3; 
 	min-height: 110px; 
-	cursor: pointer;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	font-size: 1.8rem;
+	cursor: pointer;
 }
 .full { grid-column: span 12; }
 
-/* CYBER NAME */
 .cyber {
-	font-family: 'Orbitron', sans-serif;
+	font-family: 'Orbitron';
 	font-size: 2.2rem;
-	letter-spacing: 1px;
 	background: linear-gradient(90deg, #ff4ecd, #c084fc);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
 
-/* TEXT */
-h2 {
-	margin: 0;
-	font-size: 1.2rem;
-}
+p { color: var(--sub); }
 
-p {
-	margin-top: 10px;
-	font-size: 0.95rem;
-	color: var(--sub);
-	line-height: 1.6;
-}
-
-/* highlight */
-p em {
-	color: var(--accent);
-	font-style: normal;
-}
-
-p strong {
-	color: var(--accent);
-	font-weight: 500;
-}
-
-/* tag */
 .tag {
-	margin-top: 12px;
 	background: rgba(255,78,205,0.1);
 	color: var(--accent);
 	padding: 6px 12px;
 	border-radius: 20px;
-	font-size: 0.75rem;
-	width: fit-content;
 	border: 1px solid rgba(255,78,205,0.3);
+	cursor: pointer;
 }
 
-/* links */
-a {
-	text-decoration: none;
-	color: inherit;
+a { text-decoration: none; color: inherit; }
+
+.sm i { transition: 0.3s; }
+.sm:hover i { transform: scale(1.2); }
+
+/* MODAL */
+.modal {
+	display: none;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.7);
+	backdrop-filter: blur(6px);
 }
 
-/* ICON HOVER */
-.sm i {
-	transition: 0.3s ease;
+.modal-content {
+	background: #140a24;
+	margin: 8% auto;
+	padding: 20px;
+	border-radius: 12px;
+	width: 90%;
+	max-width: 500px;
+	text-align: center;
 }
 
-.sm:hover i {
-	transform: scale(1.2);
+.close {
+	float: right;
+	font-size: 24px;
+	cursor: pointer;
 }
 
-/* brand colors on hover */
-.links a:nth-last-child(4):hover i { color: #ffffff; }
-.links a:nth-last-child(3):hover i { color: #0A66C2; }
-.links a:nth-last-child(2):hover i { color: #E4405F; }
-.links a:nth-last-child(1):hover i { color: #ff4ecd; }
+.cert-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 10px;
+	margin-top: 20px;
+}
 
-/* mobile */
+.cert-grid a {
+	padding: 12px;
+	background: rgba(255,255,255,0.05);
+	border-radius: 8px;
+	transition: 0.3s;
+	text-align: center;
+}
+
+.cert-grid a:hover {
+	background: rgba(255,78,205,0.2);
+	transform: scale(1.05);
+}
+
 @media (max-width: 700px) {
-	.lg, .md, .sm {
-		grid-column: span 12;
-	}
+	.lg, .md, .sm { grid-column: span 12; }
 }
 </style>
 </head>
@@ -195,65 +177,95 @@ a {
 
 <section class="links">
 
-<!-- HERO -->
 <div class="item lg">
   <div class="cyber">Nikhil Sha</div>
   <p>SERVER / CLOUD ENGINEER</p>
 </div>
 
-<!-- ABOUT ME -->
 <div class="item lg">
   <h2>About me</h2>
-  <p>
-	I keep systems alive when they’re about to break. Not just fixing issues, but understanding why they happen. Tracing failures. Reading between logs and finding patterns. 
-  </p>
+  <p>I keep systems alive when they’re about to break. Tracing failures. Reading logs. Finding patterns.</p>
 </div>
 
-<!-- STACK -->
 <div class="item md">
   <h2>Stack</h2>
   <p>SERVERS • Webhosting • DNS</p>
 </div>
 
-<!-- EXPERIENCE -->
-<div class="item md">
+<!-- CERTS -->
+<div class="item md" onclick="openModal()">
  <div class="tag"><h2>VIEW CERTIFICATES</h2></div>
 </div>
 
-<!-- PROOF -->
 <div class="item md">
   <h2>Handled</h2>
   <p>Downtime • Failures • Migrations • Recovery</p>
 </div>
 
-<!-- APPROACH -->
 <div class="item full">
   <h2>Current Role</h2>
-  <p>
-    Server Enginner  
-    @ Hashroot Technologies.   
-    2022 - Present.
-  </p>
+  <p>Server Engineer
+	@ Hashroot Technologies.
+	2022 - Present</p>
 </div>
 
-<!-- SOCIALS -->
 <a href="https://github.com/nks900" target="_blank" class="item sm">
-	<i class="fab fa-github"></i>
+<i class="fab fa-github"></i>
 </a>
 
 <a href="https://www.linkedin.com/in/nikhil-sha-843a61217/" target="_blank" class="item sm">
-	<i class="fab fa-linkedin-in"></i>
+<i class="fab fa-linkedin-in"></i>
 </a>
 
 <a href="resume.pdf" target="_blank" class="item sm">
-	<i class="fas fa-file-alt"></i>
+<i class="fas fa-file-lines"></i>
 </a>
 
 <a href="mailto:nikhilshah228@gmail.com" class="item sm">
-	<i class="fas fa-envelope"></i>
+<i class="fas fa-envelope"></i>
 </a>
 
 </section>
+
+<!-- MODAL -->
+<div id="certModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <h2>Certificates</h2>
+
+    <div class="cert-grid">
+      <a href="portfolio/aws_code_build_test.pdf" target="_blank">
+        <i class="fas fa-certificate"></i><br>AWS
+      </a>
+
+      <a href="linux-admin.pdf" target="_blank">
+        <i class="fas fa-certificate"></i><br>Linux
+      </a>
+
+      <a href="cpanel-certification.pdf" target="_blank">
+        <i class="fas fa-certificate"></i><br>cPanel
+      </a>
+
+      <a href="networking-cert.pdf" target="_blank">
+        <i class="fas fa-certificate"></i><br>Networking
+      </a>
+    </div>
+  </div>
+</div>
+
+<script>
+function openModal() {
+	document.getElementById("certModal").style.display = "block";
+}
+function closeModal() {
+	document.getElementById("certModal").style.display = "none";
+}
+window.onclick = function(e) {
+	if (e.target.id === "certModal") {
+		closeModal();
+	}
+}
+</script>
 
 </body>
 </html>
