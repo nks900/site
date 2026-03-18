@@ -1,1 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nikhil Sha</title>
 
+<!-- FONTS -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+
+<style>
+* { box-sizing: border-box; }
+
+:root {
+	--bg1: #0f0c29;
+	--bg2: #1a0f2e;
+	--accent: #ff4ecd;
+	--text: #e7e3f5;
+	--sub: #b9b4d0;
+}
+
+/* 🌌 BACKGROUND */
+body {
+	margin: 0;
+	font-family: 'Inter', sans-serif;
+	color: var(--text);
+	display: flex;
+	justify-content: center;
+	padding: 30px 15px;
+	background: linear-gradient(-45deg, #0f0c29, #1a0f2e, #140a24, #1c1235);
+	background-size: 400% 400%;
+	animation: bgMove 12s ease infinite;
+}
+
+@keyframes bgMove {
+	0% { background-position: 0% 50%; }
+	50% { background-position: 100% 50%; }
+	100% { background-position: 0% 50%; }
+}
+
+/* GRID */
+.links {
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	gap: 12px;
+	max-width: 950px;
+	width: 100%;
+}
+
+/* CARD */
+.item {
+	position: relative;
+	padding: 18px;
+	border-radius: 14px;
+	background: rgba(255,255,255,0.04);
+	backdrop-filter: blur(10px);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	overflow: hidden;
+}
+
+/*  ANIMATED BORDER */
+.item::before {
+	content: "";
+	position: absolute;
+	inset: -1px;
+	border-radius: 14px;
+	background: linear-gradient(120deg, transparent, var(--accent), transparent);
+	background-size: 200% 200%;
+	animation: borderMove 4s linear infinite;
+	z-index: 0;
+	opacity: 0.6;
+}
+
+.item::after {
+	content: "";
+	position: absolute;
+	inset: 1px;
+	background: rgba(20, 10, 36, 0.9);
+	border-radius: 14px;
+	z-index: 1;
+}
+
+.item * {
+	position: relative;
+	z-index: 2;
+}
+
+@keyframes borderMove {
+	0% { background-position: 0% 50%; }
+	100% { background-position: 200% 50%; }
+}
+
+/* hover */
+.item:hover {
+	transform: translateY(-6px) scale(1.02);
+}
+
+/* sizes */
+.lg { grid-column: span 6; min-height: 220px; }
+.md { grid-column: span 4; min-height: 170px; }
+.sm { grid-column: span 3; min-height: 110px; cursor: pointer; }
+.full { grid-column: span 12; }
+
+/* CYBER NAME */
+.cyber {
+	font-family: 'Orbitron', sans-serif;
+	font-size: 2.2rem;
+	letter-spacing: 1px;
+	background: linear-gradient(90deg, #ff4ecd, #c084fc);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+/* TEXT */
+h2 {
+	margin: 0;
+	font-size: 1.2rem;
+}
+
+p {
+	margin-top: 10px;
+	font-size: 0.95rem;
+	color: var(--sub);
+	line-height: 1.6;
+}
+
+/* highlight */
+p em {
+	color: var(--accent);
+	font-style: normal;
+}
+
+p strong {
+	color: var(--accent);
+	font-weight: 500;
+}
+
+/* tag */
+.tag {
+	margin-top: 12px;
+	background: rgba(255,78,205,0.1);
+	color: var(--accent);
+	padding: 6px 12px;
+	border-radius: 20px;
+	font-size: 0.75rem;
+	width: fit-content;
+	border: 1px solid rgba(255,78,205,0.3);
+}
+
+/* links */
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.sm:hover {
+	box-shadow: 0 0 20px rgba(255,78,205,0.4);
+}
+
+/* mobile */
+@media (max-width: 700px) {
+	.lg, .md, .sm {
+		grid-column: span 12;
+	}
+}
+</style>
+</head>
+
+<body>
+
+<section class="links">
+
+<!-- HERO -->
+<div class="item lg">
+  <div class="cyber">Nikhil Sha</div>
+  <p>SERVER / CLOUD ENGINEER</p>
+  <div class="tag">Linux • Cloud • Infrastructure</div>
+</div>
+
+<!-- ABOUT ME -->
+<div class="item lg">
+  <h2>About me</h2>
+  <p>
+I keep systems alive when they’re about to break. Not just fixing issues, but understanding why they happen. Tracing failures. Reading between log and finding patterns. 
+  </p>
+</div>
+
+
+
+<!-- STACK -->
+<div class="item md">
+  <h2>Stack</h2>
+  <p>Linux • Webhosting • DNS</p>
+</div>
+
+<!-- EXPERIENCE -->
+<div class="item md">
+ <div class="tag"><h2>VIEW CERTIFCICATES</h2></div>
+</div>
+
+<!-- PROOF -->
+<div class="item md">
+  <h2>Handled</h2>
+  <p>Downtime • Failures • Migrations • Recovery</p>
+</div>
+
+<!-- APPROACH -->
+<div class="item full">
+  <h2>Approach</h2>
+  <p>
+    I don’t guess — I debug.  
+    I don’t panic — I isolate.  
+    I don’t patch — I fix it right.
+  </p>
+</div>
+
+<!-- SOCIALS -->
+<a href="https://github.com" target="_blank" class="item sm">GitHub</a>
+<a href="https://linkedin.com" target="_blank" class="item sm">LinkedIn</a>
+<a href="https://instagram.com" target="_blank" class="item sm">Instagram</a>
+<a href="mailto:nikhilshah228@gmail.com" class="item sm">Email</a>
+
+</section>
+
+</body>
+</html>
