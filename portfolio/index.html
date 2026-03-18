@@ -8,6 +8,9 @@
 <!-- FONTS -->
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
 
+<!-- ICONS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 <style>
 * { box-sizing: border-box; }
 
@@ -58,6 +61,7 @@ body {
 	flex-direction: column;
 	justify-content: center;
 	overflow: hidden;
+	transition: 0.3s ease;
 }
 
 /*  ANIMATED BORDER */
@@ -100,7 +104,15 @@ body {
 /* sizes */
 .lg { grid-column: span 6; min-height: 220px; }
 .md { grid-column: span 4; min-height: 170px; }
-.sm { grid-column: span 3; min-height: 110px; cursor: pointer; }
+.sm { 
+	grid-column: span 3; 
+	min-height: 110px; 
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 1.8rem;
+}
 .full { grid-column: span 12; }
 
 /* CYBER NAME */
@@ -155,9 +167,20 @@ a {
 	color: inherit;
 }
 
-.sm:hover {
-	box-shadow: 0 0 20px rgba(255,78,205,0.4);
+/* ICON HOVER */
+.sm i {
+	transition: 0.3s ease;
 }
+
+.sm:hover i {
+	transform: scale(1.2);
+}
+
+/* brand colors on hover */
+.links a:nth-last-child(4):hover i { color: #ffffff; }
+.links a:nth-last-child(3):hover i { color: #0A66C2; }
+.links a:nth-last-child(2):hover i { color: #E4405F; }
+.links a:nth-last-child(1):hover i { color: #ff4ecd; }
 
 /* mobile */
 @media (max-width: 700px) {
@@ -176,28 +199,25 @@ a {
 <div class="item lg">
   <div class="cyber">Nikhil Sha</div>
   <p>SERVER / CLOUD ENGINEER</p>
-  <div class="tag">Linux • Cloud • Infrastructure</div>
 </div>
 
 <!-- ABOUT ME -->
 <div class="item lg">
   <h2>About me</h2>
   <p>
-I keep systems alive when they’re about to break. Not just fixing issues, but understanding why they happen. Tracing failures. Reading between log and finding patterns. 
+	I keep systems alive when they’re about to break. Not just fixing issues, but understanding why they happen. Tracing failures. Reading between logs and finding patterns. 
   </p>
 </div>
-
-
 
 <!-- STACK -->
 <div class="item md">
   <h2>Stack</h2>
-  <p>Linux • Webhosting • DNS</p>
+  <p>SERVERS • Webhosting • DNS</p>
 </div>
 
 <!-- EXPERIENCE -->
 <div class="item md">
- <div class="tag"><h2>VIEW CERTIFCICATES</h2></div>
+ <div class="tag"><h2>VIEW CERTIFICATES</h2></div>
 </div>
 
 <!-- PROOF -->
@@ -208,19 +228,30 @@ I keep systems alive when they’re about to break. Not just fixing issues, but 
 
 <!-- APPROACH -->
 <div class="item full">
-  <h2>Approach</h2>
+  <h2>Current Role</h2>
   <p>
-    I don’t guess — I debug.  
-    I don’t panic — I isolate.  
-    I don’t patch — I fix it right.
+    Server Enginner  
+    @ Hashroot Technologies.   
+    2022 - Present.
   </p>
 </div>
 
 <!-- SOCIALS -->
-<a href="https://github.com" target="_blank" class="item sm">GitHub</a>
-<a href="https://linkedin.com" target="_blank" class="item sm">LinkedIn</a>
-<a href="https://instagram.com" target="_blank" class="item sm">Instagram</a>
-<a href="mailto:nikhilshah228@gmail.com" class="item sm">Email</a>
+<a href="https://github.com/nks900" target="_blank" class="item sm">
+	<i class="fab fa-github"></i>
+</a>
+
+<a href="https://www.linkedin.com/in/nikhil-sha-843a61217/" target="_blank" class="item sm">
+	<i class="fab fa-linkedin-in"></i>
+</a>
+
+<a href="resume.pdf" target="_blank" class="item sm">
+	<i class="fas fa-file-alt"></i>
+</a>
+
+<a href="mailto:nikhilshah228@gmail.com" class="item sm">
+	<i class="fas fa-envelope"></i>
+</a>
 
 </section>
 
