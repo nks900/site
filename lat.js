@@ -12,13 +12,13 @@ const artistName = document.querySelector(".music-player p");
 
 // Songs list
 const songs = [
-  { title: "obsession", name: "", source: "https://github.com/nks900/site/raw/refs/heads/main/shameless.mp3" },
-  { title: "chaos", name: "", source: "https://github.com/nks900/site/raw/refs/heads/main/hurtyou.mp3" },
-  { title: "intoxication", name: "", source: "https://github.com/nks900/site/raw/refs/heads/main/lostinthefire.mp3" },
-  { title: "phantom regret", name: "", source: "https://github.com/nks900/x/raw/refs/heads/main/heyxf.mp3" },
-  { title: "emptiness", name: "", source: "https://github.com/nks900/site/raw/refs/heads/main/dawnstarry.mp3" },
-  { title: "abyss", name: "", source: "https://github.com/nks900/site/raw/refs/heads/main/baptized-in-fear.mp3" },
-  { title: "rewire", name: "", source: "https://github.com/nks900/site/raw/refs/heads/main/wickedgames.mp3" }
+  { title: "", name: "", source: "https://github.com/nks900/site/raw/refs/heads/main/shameless.mp3" },
+  { title: "", name: "", source: "https://github.com/nks900/site/raw/refs/heads/main/hurtyou.mp3" },
+  { title: "", name: "", source: "https://github.com/nks900/site/raw/refs/heads/main/lostinthefire.mp3" },
+  { title: "", name: "", source: "https://github.com/nks900/x/raw/refs/heads/main/heyxf.mp3" },
+  { title: "", name: "", source: "https://github.com/nks900/site/raw/refs/heads/main/dawnstarry.mp3" },
+  { title: "", name: "", source: "https://github.com/nks900/site/raw/refs/heads/main/baptized-in-fear.mp3" },
+  { title: "", name: "", source: "https://github.com/nks900/site/raw/refs/heads/main/wickedgames.mp3" }
 ];
 let currentSongIndex = 3;
 
