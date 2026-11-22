@@ -12,7 +12,9 @@ const songs = [
   { title: "", name: "", source: "https://github.com/nks900/site/raw/refs/heads/main/shameless.mp3" },
   { title: "", name: "", source: "https://github.com/nks900/site/raw/refs/heads/main/hurtyou.mp3" },
   { title: "", name: "", source: "https://github.com/nks900/site/raw/refs/heads/main/baptized-in-fear.mp3" },
-  { title: "", name: "", source: "https://github.com/nks900/site/raw/refs/heads/main/wickedgames.mp3" }
+  { title: "", name: "", source: "https://github.com/nks900/site/raw/refs/heads/main/wickedgames.mp3" },
+  { title: "", name: "", source: "https://github.com/nks900/site/raw/refs/heads/main/less.mp3" },
+  { title: "", name: "", source: "https://github.com/nks900/site/raw/refs/heads/main/outof.mp3" }
 ];
 
 let currentSongIndex = 0;
