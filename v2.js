@@ -23,41 +23,51 @@ function updateSongInfo() {
   songName.textContent = currentSong.title;
   artistName.textContent = currentSong.name;
   song.src = currentSong.source;
+  progress.value = 0;
 }
 
-async function playSong() {
-  try {
-    await song.play();
-  } catch (error) {
-    if (error.name !== "NotAllowedError") {
-      console.warn("Could not play the song:", error);
-    }
-  }
-
+function updatePlayIcon() {
   controlIcon.classList.toggle("fa-play", song.paused);
   controlIcon.classList.toggle("fa-pause", !song.paused);
 }
 
-function pauseSong() {
-  song.pause();
-  controlIcon.classList.remove("fa-pause");
-  controlIcon.classList.add("fa-play");
+function playOnPageClick(event) {
+  // Links and player controls keep their normal click behaviour.
+  if (event.target.closest("a, button, input")) return;
+
+  if (song.paused) {
+    playSong();
+  }
 }
 
-function playPause() {
+async function playSong(tryOnPageClick = false) {
+  try {
+    await song.play();
+    document.removeEventListener("click", playOnPageClick, true);
+  } catch (error) {
+    if (error.name === "NotAllowedError") {
+      if (tryOnPageClick) {
+        document.addEventListener("click", playOnPageClick, true);
+      }
+    } else if (error.name !== "AbortError") {
+      console.warn("Could not play the song:", error);
+    }
+  }
+}
+
+playPauseButton.addEventListener("click", () => {
   if (song.paused) {
     playSong();
   } else {
-    pauseSong();
+    song.pause();
   }
-}
+});
 
-playPauseButton.addEventListener("click", playPause);
+song.addEventListener("play", updatePlayIcon);
+song.addEventListener("pause", updatePlayIcon);
 
 song.addEventListener("timeupdate", () => {
-  if (!song.paused) {
-    progress.value = song.currentTime;
-  }
+  progress.value = song.currentTime;
 });
 
 song.addEventListener("loadedmetadata", () => {
@@ -73,7 +83,7 @@ progress.addEventListener("change", () => {
   playSong();
 });
 
-var swiper = new Swiper(".swiper", {
+const swiper = new Swiper(".swiper", {
   effect: "coverflow",
   centeredSlides: true,
   initialSlide: currentSongIndex,
@@ -100,8 +110,9 @@ swiper.on("slideChange", () => {
 });
 
 song.addEventListener("ended", () => {
+  updatePlayIcon();
   swiper.slideNext();
 });
 
 updateSongInfo();
-playSong();
+playSong(true);
