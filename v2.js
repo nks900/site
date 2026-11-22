@@ -18,15 +18,24 @@ const songs = [
 let currentSongIndex = 0;
 
 function updateSongInfo() {
-  songName.textContent = songs[currentSongIndex].title;
-  artistName.textContent = songs[currentSongIndex].name;
-  song.src = songs[currentSongIndex].source;
+  const currentSong = songs[currentSongIndex];
+
+  songName.textContent = currentSong.title;
+  artistName.textContent = currentSong.name;
+  song.src = currentSong.source;
 }
 
-function playSong() {
-  song.play();
-  controlIcon.classList.add("fa-pause");
-  controlIcon.classList.remove("fa-play");
+async function playSong() {
+  try {
+    await song.play();
+  } catch (error) {
+    if (error.name !== "NotAllowedError") {
+      console.warn("Could not play the song:", error);
+    }
+  }
+
+  controlIcon.classList.toggle("fa-play", song.paused);
+  controlIcon.classList.toggle("fa-pause", !song.paused);
 }
 
 function pauseSong() {
@@ -95,3 +104,4 @@ song.addEventListener("ended", () => {
 });
 
 updateSongInfo();
+playSong();
