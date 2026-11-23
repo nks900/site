@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>x'o</title>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MX86F6X0ES"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag("js", new Date());
+    gtag("config", "G-MX86F6X0ES");
+  </script>
+
+  <link rel="stylesheet" href="lat.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    .album-cover .single-cover {
+      display: block;
+      width: min(280px, 100%);
+      height: auto;
+      margin: 0 auto;
+      border-radius: 16px;
+    }
+
+    .music-player .controls {
+      display: flex;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="album-cover">
+    <img class="single-cover" src="./heyxx.jpg" alt="Song cover">
+  </div>
+
+  <div class="music-player">
+    <audio
+      id="song"
+      src="https://github.com/nks900/x/raw/refs/heads/main/heyxf.mp3"
+      preload="metadata"
+    ></audio>
+
+    <div class="controls">
+      <button class="play-pause-btn" type="button" aria-label="Play">
+        <i class="fa-solid fa-play" id="controlIcon" aria-hidden="true"></i>
+      </button>
+    </div>
+  </div>
+
+  <script src="./moon.js"></script>
+</body>
+</html>
