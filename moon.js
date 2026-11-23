@@ -24,7 +24,7 @@ playPauseButton.addEventListener("click", async () => {
     await song.play();
   } catch (error) {
     if (error.name !== "AbortError") {
-      console.warn("Could not play heyxf.mp3", error);
+      console.warn("Could not play moonfinal.mp3", error);
     }
     updatePlayButton();
   }
